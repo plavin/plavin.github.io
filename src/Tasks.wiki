@@ -1,0 +1,3 @@
+== Tasks ==
+    * Finish Spatter plots
+    * Learn SST
