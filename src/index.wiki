@@ -2,6 +2,7 @@
     * [[Tasks]] -- things to be done _yesterday_!!!
     * [[Project Gutenberg]] -- good books are power.
     * [[Scratchpad]] -- various temporary stuff.
+    * [[Mead]] -- Notes on my mead making
 
 {{https://raw.githubusercontent.com/plavin/plavin.github.io/master/resources/sec_bird.png|secretary bird|style="width:150px;heigh:150px;"}}
 
