@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Patrick Lavin"
+title                    : "lavin.cc"
 title_separator          : "-"
 name                     : &name "Patrick Lavin"
 description              : &description "personal description"
@@ -80,8 +80,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
+  name             : "Patrick Lavin"
+  avatar           : "Headshot.jpeg"
   bio              : "PhD Candidate at Georgia Tech"
   location         : "Atlanta, GA"
   employer         :
