@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Your Sidebar Name"
   avatar           : "profile.png"
-  bio              : "PhD Candidate"
+  bio              : "PhD Candidate at Georgia Tech"
   location         : "Atlanta, GA"
-  employer         : "Georgia Institute of Technology"
+  employer         :
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=gLpK-rUAAAAJ"
   email            :
