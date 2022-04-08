@@ -43,7 +43,7 @@ call plug#begin('~/.vim/plugged')
 
 " List of Vim-Plug pluginlls
 Plug 'xolox/vim-misc'
-Plug 'vim-scripts/Wombat'
+"Plug 'vim-scripts/Wombat'
 "Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --clang-compiler' }
 Plug 'tpope/vim-surround'
 Plug 'craigemery/vim-autotag'
@@ -55,4 +55,8 @@ Plug 'farmergreg/vim-lastplace'
 " Vim-Plug end
 call plug#end()
 
-:colo wombat
+":colo wombat
+"
+
+:imap ,m ◊
+:cnoremap ,m ◊
