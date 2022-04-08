@@ -6,6 +6,9 @@
 :imap kj <Esc>
 :cnoremap kj <c-c>
 
+":nmap iu zfa}
+":nmap ui zd
+
 :set autoindent
 :set smartindent
 :set cindent
@@ -51,12 +54,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'vimwiki/vimwiki'
 Plug 'farmergreg/vim-lastplace'
+" coq_nvim - https://github.com/ms-jpq/coq_nvim
 
 " Vim-Plug end
 call plug#end()
 
 ":colo wombat
-"
 
 :imap ,m ◊
 :cnoremap ,m ◊
