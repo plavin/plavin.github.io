@@ -316,7 +316,7 @@ md"""
 
 ### Oh and one more thing...
 
-Did we get a better mean? We had only one sample, which had a mean of $(mean(responses)). The bootstrap method provided us with $(round(bootmean;digits=2)), which is nearly identical. So we didn't use this to get a better mean, merely to to an estimate of the error in that measurement.
+Did we get a better mean? We had only one sample, which had a mean of $(mean(responses)). The bootstrap method provided us with $(round(bootmean;digits=2)), which is nearly identical. So we didn't use this to get a better mean, merely to to an estimate of the error in that measurement. Perhaps however, this would not be true with a different statistic. I don't know, this was just my own observation.
 """
 
 # ╔═╡ e41995a5-1591-4404-b585-3c4e9aac49bf
