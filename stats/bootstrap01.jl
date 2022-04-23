@@ -61,7 +61,7 @@ Our sample mean is **$(round(mean(responses); digits=2))** with standard deviati
 
 This is called a point estimate, but what we want is the true number of pickups in the whole lab.
 
-An **estimator** is a rule for calculating an estimate. In this case, we are using sample mean, denoted $$\bar{X}$$. A **population parameter** is a numeric summary a9ut a population. In this case, this is the average time of phone pickups per day, denoted $$\mu$$.
+An **estimator** is a rule for calculating an estimate. In this case, we are using sample mean, denoted $$\bar{X}$$. A **population parameter** is a numeric summary about a population. In this case, this is the average time of phone pickups per day, denoted $$\mu$$.
 
 But how accurate is the estimate result? (How far is $$\bar{X}$$ from $$\mu$$?) The common measure is the standard error.
 """
@@ -259,7 +259,7 @@ By defintion of the EDF, each point is equally weighted. Thus, sampling from the
 # ╔═╡ 58ac0581-bde8-4940-9020-a738f695a2fd
 md"""
 
-## Sanity Check
+## Assumptions, Applicability
 
 Questions:
 
@@ -293,13 +293,43 @@ bootmean = mean(bootmeans)
 truemean = mean(pickups)
 
 # ╔═╡ cb88575d-719b-44d6-aebe-e071e5a90069
-bootmeanstd = std(bootmeans)
+bootmeanstd = sqrt(var(bootmeans))
 
 # ╔═╡ 57c0deb6-feb6-4e79-bc1d-a57a6e678eda
 truestderror = std(pickups) / (30^(.5))
 
 # ╔═╡ 5b9bc0f6-c43d-4ea5-9ce6-2aa41d0ec74a
+md"""
+And that's it, we're done. We see that we have calculated an estimate for the standard deviation. The bootstrap simulation gave us **$(round(bootmeanstd;digits=2))** and the true standerd error for a sample size of 30 was **$(round(truestderror;digits=2))**. 
 
+Before, we needed to assume that the standard error of the sample was a good estimate for the standard deviation of the population, but we had to assume our estimator followed a normal distribution and that it was easy to calculate the standard error for our statistic. The bootstrap method let us sidestep that, and we only needed the following assumtions: 
+1. We need a smooth measure of error, formulated as a statistical functional (we used variance)
+2. We needed a good estimate of $$F$$
+
+**How can we reduce the error in our error estimate?**
+
+With higher a higher sample size, (we used 30) we will have a better EDF and less approximation error. With more simulations, we will have less simulation error. This will give us a better estimate of the error.
+"""
+
+# ╔═╡ d9166184-8705-49c4-a7e9-0bba61adcaae
+md"""
+
+### Oh and one more thing...
+
+Did we get a better mean? We had only one sample, which had a mean of $(mean(responses)). The bootstrap method provided us with $(round(bootmean;digits=2)), which is nearly identical. So we didn't use this to get a better mean, merely to to an estimate of the error in that measurement.
+"""
+
+# ╔═╡ e41995a5-1591-4404-b585-3c4e9aac49bf
+md"""
+
+## Thoughts 
+
+- How do we know if we have a good enough estimate of $$F$$?
+- How do we apply this to statistical simulation of computer architecture?
+  - Can we use this to get estimates on the error for our Markov models?
+- How do we use this in an online fashion?
+
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1191,7 +1221,7 @@ version = "0.9.1+5"
 """
 
 # ╔═╡ Cell order:
-# ╠═0810c98f-2526-4ab4-9cd5-a662434e332d
+# ╟─0810c98f-2526-4ab4-9cd5-a662434e332d
 # ╟─a4283cac-c253-11ec-1d76-495287bbab72
 # ╟─c33fde47-ac17-4194-973b-cdb277907b60
 # ╟─e42b8dfb-1a75-448c-acc1-3255c87a0edf
@@ -1217,6 +1247,8 @@ version = "0.9.1+5"
 # ╠═fddd7c16-90b7-45dc-bcd0-8fbae1b64bb4
 # ╠═cb88575d-719b-44d6-aebe-e071e5a90069
 # ╠═57c0deb6-feb6-4e79-bc1d-a57a6e678eda
-# ╠═5b9bc0f6-c43d-4ea5-9ce6-2aa41d0ec74a
+# ╟─5b9bc0f6-c43d-4ea5-9ce6-2aa41d0ec74a
+# ╟─d9166184-8705-49c4-a7e9-0bba61adcaae
+# ╟─e41995a5-1591-4404-b585-3c4e9aac49bf
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
