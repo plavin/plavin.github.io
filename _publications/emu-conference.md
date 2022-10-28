@@ -1,7 +1,7 @@
 ---
 title: "An initial characterization of the Emu Chick"
 collection: publications
-permalink: /publication/2010-10-01-paper-title-number-2
+permalink: /publication/emu-conf
 excerpt: 'We explored the performance of a couple microbenchmarks on a novel machine with migratory threads, meaning the compute goes where the data is, not the other way around.'
 date: 2018-05-21
 venue: 'IPDPS'
