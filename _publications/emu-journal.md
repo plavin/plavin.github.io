@@ -3,7 +3,7 @@ title: "A microbenchmark characterization of the emu chick"
 collection: publications
 permalink: /publication/emu-parco
 excerpt: 'We extended our IPDPS paper to '
-date: 2019-09
+date: 2019-09-01
 venue: 'Parallel Computing'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S0167819118302503'
 citation: 'Jeffrey S Young, Eric Hein, Srinivas Eswar, **Patrick Lavin**, Jiajia Li, Jason Riedy, Richard Vuduc, Tom Conte. (2019). &quot;An initial characterization of the Emu Chick.&quot; <i>Parallel Computing</i>.'
