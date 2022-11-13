@@ -40,6 +40,33 @@ Work experience
   * Project: Autovectorization of Nek500 matmul kernels
   * Mentor: Barry Rountree
 
+Teaching
+======
+  <ul>{% for post in site.teaching %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+ 
+Teaching Assistantships
+======
+* CSE 6220 - High Performance Computing - Spring 2021
+* CSE 6220 - High Performance Computing - Fall 2020
+* CSE 6140 - CSE Algorithms - Fall 2017
+
+Service and leadership
+======
+* President of the GT CSE Graduate Student Association, 2019 - 2022
+* President's Undergraudate Research Award (PURA) Reviewer, 2017, 2020, 2022
+* Undergraduate Research Opportunities (UROP) Poster Session Judge, 2017, 2022
+* LCTES'21 Artifact Evaluation Committee
+* SC'21 Sub-reviewer 
+* IPDPS'23 Sub-reviewer
+
+Teaching Certifications
+======
+* Georgia Tech CTL Tech to Teaching Certificate - Summer 2021
+* Inclusive STEM Teaching Project - Certificate of Completion - Summer 2021
+* CIRTL Associate - Spring 2021
+
 Publications
 ======
   <ul>{% for post in site.publications %}
@@ -52,17 +79,4 @@ Talks
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
   
-Service and leadership
-======
-* President of the GT CSE Graduate Student Association, 2019 - 2022
-* President's Undergraudate Research Award (PURA) Reviewer, 2017, 2020, 2022
-* Undergraduate Research Opportunities (UROP) Poster Session Judge, 2017, 2022
-* LCTES'21 Artifact Evaluation Committee
-* SC'21 Sub-reviewer 
-* IPDPS'23 Sub-reviewer
