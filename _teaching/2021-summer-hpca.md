@@ -8,6 +8,8 @@ date: 2021-05-01
 location: "Virtual"
 ---
 
+[Course Syllabus](/files/syllabus-cs4290-summer2021.pdf)
+
 I taght 9 undergraduate students about the following topics:
 - Performance measurement and cost
 - Uniprocessor cache hierarchy design
