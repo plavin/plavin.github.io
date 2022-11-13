@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-This website is under construction, check back in late November 2022! 
+This website is still under construction, but should be ready by the end of November!
