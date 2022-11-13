@@ -6,7 +6,7 @@ excerpt: 'We present a framework and initial implementation of a novel technique
 date: 2021-05-01
 venue: 'Internation Conference on Computing Frontiers'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3457388.3458670'
-citation: '<b>Patrick Lavin</b>, Jeffrey Young, Richard Vuduc, Jonathan Beard. (2021) &quot;Online model swapping for architectural simulation&quot; <i>Computing Frontiers</i>'
+citation: '<b>Patrick Lavin</b>, Jeffrey Young, Richard Vuduc, Jonathan Beard. (2021) &quot;Online model swapping for architectural simulation.&quot; <i>Computing Frontiers.</i>'
 ---
 As systems and applications grow more complex, detailed computer
 architecture simulation takes an ever increasing amount of time.

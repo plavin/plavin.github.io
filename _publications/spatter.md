@@ -6,7 +6,7 @@ excerpt: 'This paper describes our memory micro-benchmark, [Spatter](https://git
 date: 2020-09-01
 venue: 'The International Symposium on Memory Systems'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3422575.3422794'
-citation: '<b>Patrick Lavin</b>, Jeffrey Young, Richard Vuduc, Jason Riedy, Aaron Vose, Daniel Ernst. (2020) &quot;Evaluating Gather and Scatter Performance on CPUs and GPUs.&quot; <i>MEMSYS</i>'
+citation: '<b>Patrick Lavin</b>, Jeffrey Young, Richard Vuduc, Jason Riedy, Aaron Vose, Daniel Ernst. (2020) &quot;Evaluating Gather and Scatter Performance on CPUs and GPUs.&quot; <i>MEMSYS.</i>'
 ---
 This paper describes a new benchmark tool, Spatter, for assessing
 memory system architectures in the context of a specific category
