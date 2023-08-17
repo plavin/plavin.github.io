@@ -54,6 +54,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'vimwiki/vimwiki'
 Plug 'farmergreg/vim-lastplace'
+Plug 'chrisbra/csv.vim'
 " coq_nvim - https://github.com/ms-jpq/coq_nvim
 
 " Vim-Plug end
