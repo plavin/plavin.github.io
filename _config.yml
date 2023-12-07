@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Patrick Lavin"
   avatar           : "Headshot.jpeg"
-  bio              : "PhD Candidate at Georgia Tech"
+  bio              : "Senior Member of Technical Staff at Sandia National Laboratories"
   location         : "Atlanta, GA"
-  employer         :
+  employer         : "Sandia National Laboratories"
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=gLpK-rUAAAAJ"
-  email            :
+  email            : "prlavin@sandia.gov"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
