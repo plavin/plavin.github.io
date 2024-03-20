@@ -16,6 +16,7 @@ then
     if [ ! -d ${INTEL_PIN_DIRECTORY} ];
     then
         echo "Error: INTEL_PIN_DIRECTORY variable set but does not point to a directory. Please install pin at $INTEL_PIN_DIRECTORY"
+        echo "  -> https://www.intel.com/content/www/us/en/developer/articles/tool/pin-a-binary-instrumentation-tool-downloads.html"
         exit
     fi
 fi
