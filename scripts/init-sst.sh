@@ -17,33 +17,38 @@ then
     exit
 fi
 
-mkdir -p $SCRIPT_DIR/autotools
-cd autotools
-wget https://ftp.gnu.org/gnu/m4/m4-$M4_VER.tar.xz
-wget https://ftp.gnu.org/gnu/autoconf/autoconf-$AC_VER.tar.xz
-wget https://ftp.gnu.org/gnu/automake/automake-$AM_VER.tar.xz
-wget https://ftp.gnu.org/gnu/libtool/libtool-$LT_VER.tar.xz
+if [ ! -d "$SCRIPT_DIR/autotools" ];
+then
+    mkdir -p $SCRIPT_DIR/autotools
+    cd autotools
+    wget https://ftp.gnu.org/gnu/m4/m4-$M4_VER.tar.xz
+    wget https://ftp.gnu.org/gnu/autoconf/autoconf-$AC_VER.tar.xz
+    wget https://ftp.gnu.org/gnu/automake/automake-$AM_VER.tar.xz
+    wget https://ftp.gnu.org/gnu/libtool/libtool-$LT_VER.tar.xz
 
-tar xf m4-$M4_VER.tar.xz
-tar xf autoconf-$AC_VER.tar.xz
-tar xf automake-$AM_VER.tar.xz
-tar xf libtool-$LT_VER.tar.xz
+    tar xf m4-$M4_VER.tar.xz
+    tar xf autoconf-$AC_VER.tar.xz
+    tar xf automake-$AM_VER.tar.xz
+    tar xf libtool-$LT_VER.tar.xz
 
-cd m4-$M4_VER
-./configure --prefix=$SST_INSTALL
-make all install
+    cd m4-$M4_VER
+    ./configure --prefix=$SST_INSTALL
+    make all install
 
-cd ../autoconf-$AC_VER
-./configure --prefix=$SST_INSTALL
-make all install
+    cd ../autoconf-$AC_VER
+    ./configure --prefix=$SST_INSTALL
+    make all install
 
-cd ../automake-$AM_VER
-./configure --prefix=$SST_INSTALL
-make all install
+    cd ../automake-$AM_VER
+    ./configure --prefix=$SST_INSTALL
+    make all install
 
-cd ../libtool-$LT_VER
-./configure --prefix=$SST_INSTALL
-make all install
+    cd ../libtool-$LT_VER
+    ./configure --prefix=$SST_INSTALL
+    make all install
+else
+    echo "The autotools directory already exists. Skipping."
+fi
 
 cd $SCRIPT_DIR
 
@@ -72,9 +77,25 @@ cd $SCRIPT_DIR
 
 if [ ! -d "./sst-elements" ];
 then
-    git clone git@github.com:sstsimulator/sst-elements.git
+    git clone git@github.com:plavin/sst-elements.git
     cd sst-elements
     git switch $ELEMENTS_BRANCH
+    git remote add sst-official git@github.com:sstsimulator/sst-elements.git
+    git pull --all
+    git branch devel --set-upstream-to sst-official/devel
+    git pull
+
+    for elem in balar ember firefly gensa hermes iris llyr mask-mpi mercury osseous samba simpleElementExample simpleSimulation thornhill vanadis zodiac;
+    do
+        cd src/sst/elements/$elem
+        touch .ignore
+        cd $SCRIPT_DIR/sst-elements
+    done
+
+    echo "*.inc" >> .git/info/exclude
+    echo "*~"    >> .git/info/exclude
+    echo "*.so"  >> .git/info/exclude
+
     ./autogen.sh
     ./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY
     make -j8 install
