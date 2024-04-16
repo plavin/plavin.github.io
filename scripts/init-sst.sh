@@ -85,12 +85,13 @@ then
     git branch devel --set-upstream-to sst-official/devel
     git pull
 
-    for elem in balar ember firefly gensa hermes iris llyr mask-mpi mercury osseous samba simpleElementExample simpleSimulation thornhill vanadis zodiac;
-    do
-        cd src/sst/elements/$elem
-        touch .ignore
-        cd $SCRIPT_DIR/sst-elements
-    done
+    # Uncomment to skip building some elements
+    #for elem in balar ember firefly gensa hermes iris llyr mask-mpi mercury osseous samba simpleElementExample simpleSimulation thornhill vanadis zodiac;
+    #do
+    #    cd src/sst/elements/$elem
+    #    touch .ignore
+    #    cd $SCRIPT_DIR/sst-elements
+    #done
 
     echo "*.inc" >> .git/info/exclude
     echo "*~"    >> .git/info/exclude
