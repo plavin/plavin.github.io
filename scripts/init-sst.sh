@@ -79,6 +79,7 @@ if [ ! -d "./sst-elements" ];
 then
     git clone git@github.com:plavin/sst-elements.git
     cd sst-elements
+    git config pull.rebase true
     git switch $ELEMENTS_BRANCH
     git remote add sst-official git@github.com:sstsimulator/sst-elements.git
     git pull --all
