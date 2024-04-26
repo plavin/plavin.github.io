@@ -83,7 +83,7 @@ then
     git switch $ELEMENTS_BRANCH
     git remote add sst-official git@github.com:sstsimulator/sst-elements.git
     git pull --all
-    git branch devel --set-upstream-to sst-official/devel
+    git branch $ELEMENTS_BRANCH --set-upstream-to sst-official/devel
     git pull
 
     # Uncomment to skip building some elements
