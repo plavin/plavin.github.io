@@ -3,8 +3,10 @@ set -euo pipefail
 set -x
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-CORE_BRANCH=master
-ELEMENTS_BRANCH=devel
+# USING A COMMIT INSTEAD OF A BRANCH RIGHT NOW
+#CORE_BRANCH=devel
+CORE_COMMIT=a4dbc4ae575dc9bf6f6cac42d011a1ac0d496aa8
+ELEMENTS_BRANCH=ariel-mpi-wip
 
 M4_VER=1.4.19
 AC_VER=2.72
@@ -52,6 +54,22 @@ fi
 
 cd $SCRIPT_DIR
 
+# Install Python
+if [ ! -d "$SCRIPT_DIR/python" ];
+then
+    mkdir -p $SCRIPT_DIR/python
+    cd $SCRIPT_DIR/python
+    wget https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
+    tar xf Python-3.12.3.tgz
+    cd Python-3.12.3
+    ./configure --prefix=$SST_INSTALL --enable-shared
+    make -j8 install
+else
+    echo "The python directory already exists. Skipping."
+fi
+
+cd $SCRIPT_DIR
+
 if [ -n ${INTEL_PIN_DIRECTORY+x} ];
 then
     if [ ! -d ${INTEL_PIN_DIRECTORY} ];
@@ -65,9 +83,11 @@ if [ ! -d "./sst-core" ];
 then
     git clone git@github.com:sstsimulator/sst-core.git
     cd sst-core
-    git switch $CORE_BRANCH
+    #git switch $CORE_BRANCH
+    git checkout $CORE_COMMIT
     ./autogen.sh
-    ./configure --prefix=$SST_INSTALL --disable-mpi
+    #./configure --prefix=$SST_INSTALL --enable-perf-tracking
+    ./configure --prefix=$SST_INSTALL --disable-mpi --enable-perf-tracking
     make -j8 install
 else
     echo "The sst-core directory already exists. Skipping."
@@ -86,20 +106,20 @@ then
     git branch $ELEMENTS_BRANCH --set-upstream-to sst-official/devel
     git pull
 
-    # Uncomment to skip building some elements
-    #for elem in balar ember firefly gensa hermes iris llyr mask-mpi mercury osseous samba simpleElementExample simpleSimulation thornhill vanadis zodiac;
-    #do
-    #    cd src/sst/elements/$elem
-    #    touch .ignore
-    #    cd $SCRIPT_DIR/sst-elements
-    #done
+    ## Uncomment to skip building some elements
+    for elem in balar ember firefly gensa hermes iris llyr mask-mpi mercury osseous samba simpleElementExample simpleSimulation thornhill vanadis zodiac;
+    do
+        cd src/sst/elements/$elem
+        touch .ignore
+        cd $SCRIPT_DIR/sst-elements
+    done
 
     echo "*.inc" >> .git/info/exclude
     echo "*~"    >> .git/info/exclude
     echo "*.so"  >> .git/info/exclude
 
     ./autogen.sh
-    ./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY
+    ./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY --enable-ariel-mpi
     make -j8 install
 else
     echo "The sst-elements directory already exists. Skipping."
