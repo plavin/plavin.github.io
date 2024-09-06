@@ -6,7 +6,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # USING A COMMIT INSTEAD OF A BRANCH RIGHT NOW
 #CORE_BRANCH=devel
 CORE_COMMIT=a4dbc4ae575dc9bf6f6cac42d011a1ac0d496aa8
-ELEMENTS_BRANCH=ariel-mpi-wip
+ELEMENTS_BRANCH=ariel-mpi-rebase
 
 M4_VER=1.4.19
 AC_VER=2.72
@@ -64,6 +64,7 @@ then
     cd Python-3.12.3
     ./configure --prefix=$SST_INSTALL --enable-shared
     make -j8 install
+    pip3 install blessings pygments pandas jsonargparse
 else
     echo "The python directory already exists. Skipping."
 fi
@@ -88,6 +89,7 @@ then
     ./autogen.sh
     #./configure --prefix=$SST_INSTALL --enable-perf-tracking
     ./configure --prefix=$SST_INSTALL --disable-mpi --enable-perf-tracking
+    #./configure --prefix=$SST_INSTALL --disable-mpi --enable-perf-tracking --enable-debug
     make -j8 install
 else
     echo "The sst-core directory already exists. Skipping."
