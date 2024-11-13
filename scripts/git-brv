@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Print all remotes and branches
+
+echo "-------------------"
+echo "Remotes"
+git remote -v
+echo -e "\nBranches"
+git branch -v
+echo "-------------------"
