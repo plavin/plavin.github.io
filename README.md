@@ -3,10 +3,14 @@
 This repository contains my dotfiles and other helpful documents. 
 
 ## Getting started on a new machine
-1. Clone this repo into `$HOME/tools`
-
-2. `ln -s plavin.github.io/tools/vimrc $HOME/.vimrc`
-3. `ln -s plavin.github.io/tools/tmux.conf $HOME/.tmux.conf`
+1. Clone this repo into `$HOME/plavin.github.io`
+```
+git clone git@github.com:plavin/plavin.github.io.git plavin.github.io
+ln -s plavin.github.io/tools/vimrc $HOME/.vimrc
+ln -s plavin.github.io/tools/tmux.conf $HOME/.tmux.conf
+mkdir -p $HOME/.config/helix
+ln -s plavin.github.io/tools/config.toml $HOME/.config/helix/
+```
 
 ## To use the wiki
 1. Open the wiki by opening vim (any file, even no file) and typing `\ww`
