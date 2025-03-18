@@ -2,9 +2,9 @@
 
 # Print all remotes and branches
 
-echo "-------------------"
+echo "----------------------------------------------"
 echo "Remotes"
 git remote -v
 echo -e "\nBranches"
 git branch -v
-echo "-------------------"
+echo "----------------------------------------------"

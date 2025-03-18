@@ -1,15 +1,16 @@
 # Patrick's Tools Repo
 
-This repository contains my dotfiles and other helpful documents. 
+This repository contains my dotfiles and other helpful documents.
 
 ## Getting started on a new machine
 1. Clone this repo into `$HOME/plavin.github.io`
 ```
-git clone git@github.com:plavin/plavin.github.io.git plavin.github.io
-ln -s plavin.github.io/tools/vimrc $HOME/.vimrc
-ln -s plavin.github.io/tools/tmux.conf $HOME/.tmux.conf
+git clone git@github.com:plavin/plavin.github.io.git $HOME/plavin.github.io
+ln -s $HOME/plavin.github.io/tools/vimrc $HOME/.vimrc
+ln -s $HOME/plavin.github.io/tools/tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.config/helix
-ln -s plavin.github.io/tools/config.toml $HOME/.config/helix/
+ln -s $HOME/plavin.github.io/tools/config.toml $HOME/.config/helix/
+export PATH=$HOME/plavin.github.io/scripts:$PATH
 ```
 
 ## To use the wiki

@@ -1,4 +1,8 @@
-theme = "everforest_dark"
+theme = "molokai"
+# theme = "github_dark_high_contrast"
+# theme = "everforest_dark"
+# theme = "acme"
+# theme = "jellybeans"
 
 [keys.insert]
 k = { j = "normal_mode" }
