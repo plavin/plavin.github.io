@@ -4,7 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export SST_INSTALL=${SCRIPT_DIR}/install
 export SST_ELEMENTS_ROOT=${SCRIPT_DIR}/sst-elements
 
-export INTEL_PIN_DIRECTORY=${HOME}/pin-3.28
+export INTEL_PIN_DIRECTORY=${HOME}/pin/pin-3.28
 export INTEL_PIN_DIR=${INTEL_PIN_DIRECTORY}
 export PIN_HOME=${INTEL_PIN_DIRECTORY}
 
