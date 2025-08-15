@@ -3,10 +3,8 @@ set -euo pipefail
 set -x
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# USING A COMMIT INSTEAD OF A BRANCH RIGHT NOW
-#CORE_BRANCH=devel
-CORE_COMMIT=a4dbc4ae575dc9bf6f6cac42d011a1ac0d496aa8
-ELEMENTS_BRANCH=ariel-mpi-rebase
+CORE_BRANCH=devel
+ELEMENTS_BRANCH=devel
 
 M4_VER=1.4.19
 AC_VER=2.72
@@ -84,13 +82,12 @@ if [ ! -d "./sst-core" ];
 then
     git clone git@github.com:sstsimulator/sst-core.git
     cd sst-core
-    #git switch $CORE_BRANCH
-    git checkout $CORE_COMMIT
+    git switch $CORE_BRANCH
+    #git checkout $CORE_COMMIT
     ./autogen.sh
-    #./configure --prefix=$SST_INSTALL --enable-perf-tracking
-    ./configure --prefix=$SST_INSTALL --disable-mpi --enable-perf-tracking
+    ./configure --prefix=$SST_INSTALL
     #./configure --prefix=$SST_INSTALL --disable-mpi --enable-perf-tracking --enable-debug
-    make -j8 install
+    make -j32 install
 else
     echo "The sst-core directory already exists. Skipping."
 fi
@@ -121,8 +118,9 @@ then
     echo "*.so"  >> .git/info/exclude
 
     ./autogen.sh
-    ./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY --enable-ariel-mpi
-    make -j8 install
+    ./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY
+    #./configure --prefix=$SST_INSTALL --with-pin=$INTEL_PIN_DIRECTORY --enable-ariel-mpi
+    make -j32 install
 else
     echo "The sst-elements directory already exists. Skipping."
 fi
