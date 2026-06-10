@@ -56,6 +56,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'farmergreg/vim-lastplace'
 Plug 'chrisbra/csv.vim'
 Plug 'preservim/vim-pencil'
+Plug 'editorconfig/editorconfig-vim'
 " coq_nvim - https://github.com/ms-jpq/coq_nvim
 
 " Vim-Plug end
